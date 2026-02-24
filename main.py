@@ -1,11 +1,23 @@
-import sys
+from src.logger import start_logger
+
+
+if __name__ == "__main__":
+    start_logger()
+
+'''import sys
 
 import pandas as pd
 from datetime import datetime
 import os
+# import pathlib import Path
+import time
+import serial
+from openpyxl import load_workbook, Workbook
 
-file_name = "garden_logs.xlsx"
-# making a file
+EXCEL_PATH = Path("data/garden_logs.xlsx")
+SHEET_NAME = "Logs1"
+# making a file path and sheet name
+
 
 new_data = {
      "Soil Moisture": [datetime.now()],
@@ -18,10 +30,9 @@ new_data = {
 df_new = pd.DataFrame(new_data)
 # adding the new_data into the panda dataframe
 
-'''if the file exists:
-    1. write it into the xlsx file 
-    2. if not create a new file'''
-
+# if the file exists:
+#     1. write it into the xlsx file
+#     2. if not create a new file
 if os.path.exists(file_name):
     df_existing = pd.read_excel(file_name)
     df_combined = pd.concat([df_existing,df_new], ignore_index=True)
@@ -32,3 +43,4 @@ else:
 df_combined.to_excel(file_name,index=False)
 
 print("Data appended successfully")
+'''
