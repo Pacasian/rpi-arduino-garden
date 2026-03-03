@@ -10,3 +10,10 @@ Version 1: Raspberry Pi script reads sensor data from Arduino (Serial) and write
 ## Setup
 ```bash
 pip install -r requirements.txt
+```
+
+## To Run the uvicorn server
+```bash
+uvicorn src.api:app --host 0.0.0.0 --port 8000 --reload
+```
+
