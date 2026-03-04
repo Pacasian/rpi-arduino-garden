@@ -14,6 +14,15 @@ pip install -r requirements.txt
 
 ## To Run the uvicorn server
 ```bash
-uvicorn src.api:app --host 0.0.0.0 --port 8000 --reload
+uvicorn src.api:app --reload --port 8000     
 ```
 
+## To find the usb port the arduino is having 
+```bash
+ls /dev/tty.usb*   
+```
+## To open the websocket in the Postman
+Follow the options in the Postman: ## New -> WebSocket -> Paste the following link
+```bash
+ws://localhost:8000/ws/latest
+```
